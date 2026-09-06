@@ -128,19 +128,33 @@ The agent will automatically conduct the pre-flight scan, run the discovery inte
 
 ---
 
-### Method 2: Run the Standalone Scaffolding CLI
+### Method 2: Run the Interactive Terminal Wizard (No Agent Needed)
 
-You can also run the Python scaffolding script directly:
+You can run the interactive setup wizard directly in your terminal. It asks you 5 simple questions, maps your directory, installs all Anthropic skills, and sets up your entire system in under 60 seconds:
+
+```bash
+# Clone the repository
+git clone https://github.com/Maddy-SL/ai-os-architect.git
+
+# Launch the interactive wizard
+python ai-os-architect/scripts/interactive_onboard.py
+```
+
+---
+
+### Method 3: Headless CLI Scaffolding
+
+For automated setups or CI pipelines, run the headless CLI script:
 
 ```bash
 # Run on current directory (with automatic Anthropic skills clone)
-python scripts/scaffold_ai_os.py --target "."
+python ai-os-architect/scripts/scaffold_ai_os.py --target "."
 
 # Run with a custom user profile JSON
-python scripts/scaffold_ai_os.py --target "/path/to/workspace" --profile-json profile.json
+python ai-os-architect/scripts/scaffold_ai_os.py --target "/path/to/workspace" --profile-json profile.json
 
 # Offline / fast mode (skip git cloning)
-python scripts/scaffold_ai_os.py --target "." --skip-clone
+python ai-os-architect/scripts/scaffold_ai_os.py --target "." --skip-clone
 ```
 
 ---
