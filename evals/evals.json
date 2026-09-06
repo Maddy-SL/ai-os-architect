@@ -1,0 +1,30 @@
+{
+  "skill_name": "ai-os-architect",
+  "evals": [
+    {
+      "id": 1,
+      "name": "fresh_ai_os_onboarding",
+      "prompt": "I want to build a personal AI OS from scratch to manage my consulting work, study goals, and daily life. How should I set this up?",
+      "expected_output": "Agent initiates discovery interview, audits target directory, presents the 5 Core Life Hubs (Brainstorm with auto-routing, Career, Learnings, Other Activities, Personal), recommends Google Workspace MCP, installs all Anthropic skills, and enforces strict honesty non-negotiables.",
+      "assertions": [
+        "Mentions the 5 Core Life Hubs: Brainstorm, Career, Learnings, Other Activities, and Personal",
+        "Explains Brainstorm automatic routing logic",
+        "Recommends Google Workspace MCP for connecting 5 universal data domains",
+        "Confirms installation of all Anthropic skills from github.com/anthropics/skills.git",
+        "Enforces radical intellectual honesty and no sycophancy"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "existing_workspace_adaptation",
+      "prompt": "I already have some project folders and notes in my directory. Can you turn this into a compounding AI OS without breaking my stuff?",
+      "expected_output": "Agent scans existing folders first, maps them non-destructively to the 5 Core Life Hubs, introduces Brainstorm routing, AGENTS.md single source of truth, and baseline Four-Cs health score.",
+      "assertions": [
+        "Performs pre-flight scan of existing folders",
+        "Preserves existing files without destructive overwrites",
+        "Maps existing folders to the 5 core hubs",
+        "Creates canonical AGENTS.md with pointer files"
+      ]
+    }
+  ]
+}
