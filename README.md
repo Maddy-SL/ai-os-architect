@@ -113,10 +113,10 @@ Clone this skill directly into your agent skills directory:
 
 ```bash
 # For Antigravity / AI OS:
-git clone https://github.com/<YOUR_GITHUB_USERNAME>/ai-os-architect.git .agents/skills/ai-os-architect
+git clone https://github.com/Maddy-SL/ai-os-architect.git .agents/skills/ai-os-architect
 
 # For Claude Code:
-git clone https://github.com/<YOUR_GITHUB_USERNAME>/ai-os-architect.git .claude/skills/ai-os-architect
+git clone https://github.com/Maddy-SL/ai-os-architect.git .claude/skills/ai-os-architect
 ```
 
 Once installed, simply prompt your agent:
