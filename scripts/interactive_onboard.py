@@ -3,7 +3,7 @@
 Interactive AI OS Onboarding Wizard
 Guides a user through an adaptive interview, captures their profile and scope,
 dynamically suggests a tailored folder architecture with clear rationale,
-installs all Anthropic skills, and scaffolds their AI OS with strict anti-sycophancy rules.
+installs all Anthropic skills, and scaffolds their AI OS with strict anti-sycophancy and elite reasoning rules.
 """
 
 import sys
@@ -142,7 +142,7 @@ def main():
     print("1. Open your workspace in Antigravity, Claude Code, or Cursor.")
     print("2. Ask your agent: 'Check my AI OS health' to run the Four-Cs baseline audit.")
     print("3. Ideas start in Brainstorm/ before routing out to active folders.")
-    print("4. Your agent is hardcoded for radical honesty and zero sycophancy. Enjoy your external brain!\n")
+    print("4. Your agent is hardcoded for radical honesty, zero sycophancy, and definite recommendations. Enjoy your external brain!\n")
 
 if __name__ == "__main__":
     main()

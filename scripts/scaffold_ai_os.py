@@ -8,7 +8,7 @@ Supports multiple architectural archetypes based on user context:
   - work: Professional / Enterprise Only (Brainstorm, Projects, Engagements, Operations, Knowledge, Outputs)
   - personal: Personal Life Only (Brainstorm, Life, Finance, Health, Learnings, Hobbies, Inbox, Outputs)
 Installs all Anthropic skills from https://github.com/anthropics/skills.git.
-Enforces Inviolable Operating Non-Negotiables (Anti-Sycophancy, Answer-First, Verification).
+Enforces Inviolable Operating Non-Negotiables (Anti-Sycophancy, Answer-First, Pick-a-Horse, Pre-Mortem, Epistemic Calibration, Zero Throat-Clearing, Verification).
 """
 
 import os
