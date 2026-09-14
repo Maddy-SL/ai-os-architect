@@ -64,4 +64,4 @@ For corporate environments centered on Azure / Microsoft 365:
 
 1. **Zero Credential Exposure**: Never commit API keys, OAuth secrets, or connection strings into version control. Store credentials in `.env.local` or OS environment variables.
 2. **Read-AND-Write Balance with Human Confirmation**: An AI OS must be able to act (write), not just read. However, irreversible external actions (sending emails, deleting files, running database migrations, canceling calendar events) must display a preview and await explicit human confirmation.
-3. **Document in `connections.md`**: Every active integration must be logged in [connections.md](file:///h:/AI%20OS/connections.md) with endpoint, auth mechanism, and last tested date.
+3. **Document in `connections.md`**: Every active integration must be logged in `connections.md` at the workspace root with endpoint, auth mechanism, and last tested date.
