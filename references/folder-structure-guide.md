@@ -1,93 +1,77 @@
 # AI OS Folder Structure & Routing Reference Guide
 
-This guide establishes the canonical directory taxonomy for personal AI Operating Systems. It balances radical simplicity with structured agent navigation.
+This guide establishes the folder taxonomies, recommendation logic, and agent routing conventions for personal and professional AI Operating Systems.
 
 ---
 
-## 1. The 5 Core Life Hubs
+## 1. The Context-Driven Recommendation Engine
 
-Rather than fracturing life into dozens of confusing sub-directories, every personal AI OS should center on **5 foundational hubs**:
+An effective AI OS does not force a generic directory structure onto every person. During the discovery interview, the agent determines the user's **primary scope** (Work, Personal, or Hybrid) and **role**, then generates a tailored recommendation with explicit rationale.
 
-```
-<AI_OS_ROOT>/
-├── Brainstorm/         # Raw ideation, /grill-me drills, and concept routing gate
-├── Career/             # Professional builds, consulting, career roadmap, resume, client work
-├── Learnings/          # Research, study notes, book syntheses, technical deep dives
-├── Other Activities/   # Sports, fitness, culinary exploration, creative hobbies, side quests
-├── Personal/           # Daily life ops, personal finances, health, family, inbox dropzone
-│
-├── Outputs/            # Final deliverables (decks, reports, models) & automated audits
-├── references/         # API specs, tool SOPs, and system cheat sheets
-└── .agents/            # Runtime directory: skills hub + declarative subagents
-```
+### Folder Taxonomy Decision Matrix
+
+| User Focus / Scope | Recommended Archetype | Top-Level Foldering Layout | Key Strengths & Best Fit |
+| :--- | :--- | :--- | :--- |
+| **Hybrid (Dual-Engine)** | **Standard Named Hubs** | `Brainstorm/`<br>`Career/`<br>`Learnings/`<br>`Other Activities/`<br>`Personal/`<br>`Outputs/`<br>`references/`<br>`.agents/` | Balances corporate/work demands with personal life, health, hobbies, and finance. Natural semantic naming. |
+| **Hybrid (Strictly Ordered)** | **Numbered Workstations** | `00_Outputs/`<br>`01_Personal/`<br>`02_Learning/`<br>`03_Projects/`<br>`04_Brainstorms/`<br>`references/`<br>`.agents/` | Deterministic alphabetical sorting in file explorers and CLI tools; distinct numerical separation between life ops and professional builds. |
+| **Work / Enterprise Only** | **Professional Consulting / Executive** | `Brainstorm/`<br>`Engagements/` (or `Clients/`)<br>`Projects/`<br>`Operations/`<br>`Knowledge/`<br>`Outputs/`<br>`references/`<br>`.agents/` | Strictly professional. Isolates client workpapers, delivery documents, and firm operations from external noise. |
+| **Work / Technical Only** | **Software Engineer / Technical Builder** | `Brainstorm/`<br>`Projects/`<br>`Architecture/`<br>`Docs/`<br>`DevOps/`<br>`Outputs/`<br>`references/`<br>`.agents/` | Optimized for repos, ADRs (Architectural Decision Records), API schemas, and deployment pipelines. |
+| **Personal Life Only** | **Life Operations & Self-Mastery** | `Brainstorm/`<br>`Life/`<br>`Finance/`<br>`Health/`<br>`Learnings/`<br>`Hobbies/`<br>`Inbox/`<br>`Outputs/`<br>`references/`<br>`.agents/` | Tailored for individuals, students, or creators focusing on personal finances, habit tracking, fitness, and lifelong learning without corporate clutter. |
 
 ---
 
-## 2. Directory Specifications & Lifecycle
+## 2. Directory Specifications & Lifecycle by Archetype
 
-### A. `Brainstorm/` (The Staging & Routing Gate)
-*   **Purpose**: The mandatory entry point for all unvetted ideas, side-project sparks, new venture thoughts, and automation experiments.
-*   **Operating Rule**: **No new project folder may be created in `Career/` or elsewhere without first passing through `Brainstorm/`.**
-*   **Subdirectories**:
-    *   `_archive/`: Shelved, parked, or rejected concepts (with post-mortem notes).
-*   **Files**:
-    *   `TEMPLATE_BRAINSTORM.md`: Structured template containing the spark, `/grill-me` interview questions, and Council stress-test.
-    *   `YYYY-MM-DD_Concept_Name.md`: Active brainstorm documents.
+### Archetype 1: Dual-Engine Hybrid OS
 
-### B. `Career/` (Professional Growth & Deliverables)
-*   **Purpose**: Professional execution, active career roadmaps, resume/CV assets, client engagements, and production software builds.
-*   **Recommended Subdirectories**:
-    *   `Projects/`: Active coding projects or standalone tools.
-    *   `Engagements/`: Client consulting deliverables, discovery notes, BRDs, RCMs.
-    *   `Roadmap/`: 12-18 month career goals, promotion trackers, resume versions, executive articulation notes.
-*   **Key Files**:
-    *   `README.md`: Central registry of all career projects and current status.
-    *   `MEMORY.md`: Domain-specific career memory (promotions, feedback, milestones).
+#### A. Standard Named Hubs
+*   `Brainstorm/`: Staging area for raw ideas. Mandatory `/grill-me` routing gate. Auto-routes out.
+*   `Career/`: Professional projects, client engagements, career roadmap, resume, and milestones.
+*   `Learnings/`: Level-2 topic folders for academic research, technical study notes, and book syntheses.
+*   `Other Activities/`: Hobbies, sports (cricket, gym), culinary, creative pursuits, travel.
+*   `Personal/`: Life ops, personal finances (`Finance/`), health logs, and dropzone triage (`Inbox/`).
+*   `Outputs/`: Deliverables (decks, reports, models) and 15-day automated health audits (`Audits/`).
+*   `references/`: System API specifications, tool SOPs, and cheat sheets.
+*   `.agents/`: Runtime directory with `.agents/skills/` and `.agents/agents/`.
 
-### C. `Learnings/` (Knowledge & Intellectual Capital)
-*   **Purpose**: Study notes, academic courses, technical concept mastery, and book summaries.
-*   **Recommended Subdirectories**:
-    *   `01_Topic_Name/`, `02_Topic_Name/`: Standardized Level 2 topic folders (e.g. `01_Cognitive_Thinking`, `02_Cloud_Architecture`).
-    *   Each topic folder should contain:
-        *   `README.md`: Topic syllabus and study milestones.
-        *   `notes/`: Synthesized Markdown notes.
-        *   `assets/`: Visual diagrams, cheat sheets, reference PDFs.
-*   **Key Files**:
-    *   `README.md`: Master curriculum index.
-
-### D. `Other Activities/` (Recreation, Hobbies & Sports)
-*   **Purpose**: Protects and organizes personal fulfillment outside corporate and academic work.
-*   **Recommended Subdirectories**:
-    *   `Sports/`: Sports logs, cricket match analysis, workout tracking, event schedules.
-    *   `Hobbies/`: Culinary exploration, travel itineraries, creative writing, music.
-*   **Key Files**:
-    *   `README.md`: Overview of active hobbies and recreational goals.
-
-### E. `Personal/` (Life Operations, Finances & Dropzone)
-*   **Purpose**: Daily routines, household ops, personal financial balance sheets, and raw inbox triage.
-*   **Recommended Subdirectories**:
-    *   `Finance/`: Personal investments, budget sheets, tax filings, net worth tracking.
-    *   `Health/`: Medical history, routine checkups, nutrition plans.
-    *   `Life/`: Core values, yearly reviews, family reminders, housing/apartment ops.
-    *   `Inbox/`: The triage staging ground for incoming WhatsApp voice notes, email forward dumps, and quick mobile captures.
-*   **Key Files**:
-    *   `MEMORY.md`: Personal life milestones and durable preferences.
-
-### F. Support Hubs
-*   **`Outputs/`**:
-    *   Holds finalized deliverable files (PDFs, PPTX decks, executive spreadsheets).
-    *   Contains `Audits/` subdirectory for 15-day automated health audit reports.
-*   **`references/`**:
-    *   API documentation, schemas, and SOPs (e.g. `google-workspace-api.md`).
-    *   *Rule*: Agents must check `references/` before researching external APIs.
-*   **`.agents/`**:
-    *   Runtime hub for `.agents/skills/` (tools & workflows) and `.agents/agents/` (specialist personas).
+#### B. Numbered Workstations (`00_Outputs` to `04_Brainstorms`)
+*   `00_Outputs/`: Final deliverables lifecycle (Draft -> Final -> Archive) and `Audits/`.
+*   `01_Personal/`: Life ops, `Finance/`, `Health/`, and `Inbox/` (Dropzone).
+*   `02_Learning/`: Standardized Level-2 subject folders (`01_Topic`, `02_Topic`) with syllabus and notes.
+*   `03_Projects/`: Active software builds, client consulting engagements, and tools.
+*   `04_Brainstorms/`: Raw sparks, concept evaluation, and council stress-testing.
+*   `references/` & `.agents/`: Shared specifications, connectors, and agent skills.
 
 ---
 
-## 3. The `Brainstorm/` Automatic Routing State Machine
+### Archetype 2: Work & Professional OS (Enterprise / Tech)
 
-Every concept in `Brainstorm/` must resolve into an unambiguous routing destination:
+*   `Brainstorm/`: Proposals, architectural concepts, business initiatives.
+*   `Projects/` (or `Codebases/`): Active development projects, microservices, internal tools.
+*   `Engagements/` (or `Clients/`): Client-specific folders containing discovery notes, BRDs, RCMs, and deliverables.
+*   `Operations/`: Meeting agendas, quarterly OKRs, hiring rubrics, vendor reviews, team updates.
+*   `Knowledge/` (or `Docs/`): Industry regulations, architectural blueprints, best-practice playbooks.
+*   `Outputs/`: Customer decks, audit models, executive memos, release builds.
+*   `references/`: Internal API docs, database credentials references, cloud environment configurations.
+
+---
+
+### Archetype 3: Personal Life OS (Life Ops & Growth)
+
+*   `Brainstorm/`: Personal venture ideas, creative writing concepts, travel sparks.
+*   `Life/`: Core values, annual reviews, home & apartment ops, vehicle maintenance, family commitments.
+*   `Finance/`: Personal investment ledgers, net worth calculations, tax filings, budget sheets.
+*   `Health/`: Workout tracking, medical reports, nutrition plans, biomarker history.
+*   `Learnings/`: University/course syllabi, book reading summaries, skill practice logs.
+*   `Hobbies/`: Sports logs, creative projects, cooking recipes, travel itineraries.
+*   `Inbox/`: Staging ground for unprocessed WhatsApp voice notes, email dumps, and web bookmarks.
+*   `Outputs/`: Published blog posts, creative artifacts, and 15-day personal life audits.
+
+---
+
+## 3. The Universal `Brainstorm/` Routing State Machine
+
+Regardless of the archetype chosen, **no project or major folder may be created without first passing through `Brainstorm/`**:
 
 ```
 [Incoming Spark / Idea]
@@ -95,7 +79,7 @@ Every concept in `Brainstorm/` must resolve into an unambiguous routing destinat
 [Brainstorm/YYYY-MM-DD_Concept.md]
           ↓
 [The /grill-me Drill]
-- Clarify user assumptions
+- Clarify user assumptions & problem definition
 - Evaluate real-world workload & time constraints
 - Test technical feasibility & failure modes
           ↓
@@ -105,33 +89,36 @@ Every concept in `Brainstorm/` must resolve into an unambiguous routing destinat
 3. Opportunity Cost Analyst Lens
           ↓
 [Routing Decision Gate]
-├── IF Career / Venture / Work initiative:
-│   └── Route to `Career/Projects/[Project_Name]/` (Create folder + register in README)
+├── IF Professional Project / Client Engagement:
+│   └── Route to `Career/Projects/` or `Projects/` or `03_Projects/`
 │
 ├── IF Study Topic / Skill acquisition:
-│   └── Route to `Learnings/[Topic_Name]/` (Create syllabus + notes folder)
+│   └── Route to `Learnings/[Topic_Name]/` or `02_Learning/[Topic_Name]/`
 │
-├── IF Habit / Routine / Financial system:
-│   └── Route to `Personal/[Category]/` (Update Personal/MEMORY.md)
+├── IF Life Habit / Financial / Operational system:
+│   └── Route to `Personal/` or `Finance/` or `Life/`
 │
 ├── IF Hobby / Sports / Creative pursuit:
-│   └── Route to `Other Activities/[Category]/`
+│   └── Route to `Other Activities/` or `Hobbies/`
 │
 └── IF Shelved / Flawed / High Opportunity Cost:
-    └── Move to `Brainstorm/_archive/` with fatal flaw documented
+    └── Move to `Brainstorm/_archive/` with failure analysis documented
 ```
 
 ---
 
-## 4. Adapting Existing User Setups (Pre-Flight Mapping)
+## 4. Adapting Existing User Setups (Non-Destructive Mapping)
 
-When an AI OS is installed in a workspace that already contains folders, execute non-destructive mapping:
+When installing in a workspace that already contains existing files or directories:
 
-| Existing Folder Pattern | Recommended Mapping to 5-Hub Architecture | Action |
+1. **Perform Silent Pre-Flight Scan**: Detect existing folders (`src/`, `docs/`, `01_Personal/`, `Projects/`, etc.).
+2. **Present Non-Destructive Mapping**: Propose keeping high-value folders intact while wrapping them with the AI OS navigation layer:
+
+| Existing Folder Pattern | Archetype Mapping | Non-Destructive Action |
 | :--- | :--- | :--- |
-| Numbered folders (`01_Personal`, `03_Projects`) | Direct 1:1 match to `Personal/` and `Career/` | Keep existing folder name; create relative routing links. |
-| Mixed codebases at root (`src/`, `backend/`, `app/`) | Group into `Career/Projects/[AppName]/` | Propose clean grouping to prevent root clutter. |
-| Scattered study notes / PDFs at root | Group into `Learnings/[Topic_Name]/` | Move to relevant subject syllabus. |
-| Disorganized markdown notes / scratchpads | Stage into `Brainstorm/` or `Personal/Inbox/` | Triage via `dropzone-triage`. |
+| Pre-existing numbered folders (`01_Personal`, `03_Projects`) | Map directly to Numbered Workstation Archetype | Preserve folder names; establish relative links in `MEMORY.md` and `AGENTS.md`. |
+| Codebase directories (`src/`, `backend/`, `frontend/`) | Map to `Projects/[AppName]/` or Work Archetype | Group into project folder or document root as active project build. |
+| Loose notes, PDFs, or spreadsheets at root | Map to `Brainstorm/`, `Learnings/`, or `Inbox/` | Offer to triage loose files cleanly into the designated hubs. |
+| Existing `.mcp.json` or scripts | Preserve and integrate into `connections.md` | Audit active connections without overwriting credentials. |
 
-*Rule*: Never delete or forcefully move existing user folders without explicit approval.
+*Golden Rule*: Never delete, rename, or forcefully move existing user folders without explicit user confirmation.

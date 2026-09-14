@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Interactive AI OS Onboarding Wizard
-Guides a new user through a step-by-step interview in the terminal,
-captures their profile, maps their workspace, installs all Anthropic skills,
-and scaffolds their 5 Core Life Hubs.
+Guides a user through an adaptive interview, captures their profile and scope,
+dynamically suggests a tailored folder architecture with clear rationale,
+installs all Anthropic skills, and scaffolds their AI OS with strict anti-sycophancy rules.
 """
 
 import sys
@@ -15,7 +15,7 @@ script_dir = Path(__file__).resolve().parent
 if str(script_dir) not in sys.path:
     sys.path.insert(0, str(script_dir))
 
-from scaffold_ai_os import scaffold
+from scaffold_ai_os import scaffold, ARCHETYPES
 
 def print_banner():
     print("""
@@ -36,35 +36,80 @@ def prompt_with_default(question: str, default: str) -> str:
 
 def main():
     print_banner()
-    print("Welcome! Let's configure your persistent, compounding AI OS.")
-    print("This wizard will capture your profile, set up your 5 Core Life Hubs,")
-    print("and install all Anthropic skills.\n")
+    print("Welcome! Let's architect your persistent, compounding AI OS.\n")
 
-    # Step 1: User Profile
-    user_name = prompt_with_default("1. What is your full name?", "Explorer")
+    # Step 1: User Scope & Profile
+    print("--- STEP 1: SCOPE & PROFILE ---")
+    print("What is the primary focus of this AI OS?")
+    print("  [1] Dual-Engine Hybrid (5 Core Life Hubs: Brainstorm, Career, Learnings, Other, Personal)")
+    print("  [2] Numbered Workstations (00_Outputs, 01_Personal, 02_Learning, 03_Projects, 04_Brainstorms)")
+    print("  [3] Work & Professional Only (Enterprise, Projects, Engagements, Operations, Knowledge)")
+    print("  [4] Personal Life Only (Life, Finance, Health, Learnings, Hobbies, Inbox)")
+    scope_choice = prompt_with_default("Select mode (1/2/3/4)", "1")
+
+    mode_map = {
+        "1": "hybrid",
+        "2": "numbered",
+        "3": "work",
+        "4": "personal"
+    }
+    selected_mode = mode_map.get(scope_choice, "hybrid")
+    archetype = ARCHETYPES[selected_mode]
+
+    user_name = prompt_with_default("Your name", "Explorer")
     title_domain = prompt_with_default(
-        "2. What is your profession / primary domain?",
-        "Digital Transformation & Technology Consultant"
+        "Your profession / primary domain",
+        "Digital Transformation & Technology Practitioner"
     )
     technical_stack = prompt_with_default(
-        "3. What are your primary technical tools / stack?",
+        "Primary tools & software stack",
         "Python, Excel, SQL, Web Tools, Markdown"
     )
     north_star = prompt_with_default(
-        "4. What is your 12-18 month 'North Star' goal?",
+        "12-18 month 'North Star' milestone",
         "Achieve elite domain mastery and high-leverage professional autonomy"
     )
     workload = prompt_with_default(
-        "5. What does your real weekly corporate load look like?",
+        "Real weekly schedule / constraints",
         "45-50 hrs/week corporate workload; 10 hrs/week deep work available"
     )
+    currency = prompt_with_default("Financial currency standard", "Indian Rupees (INR / ₹)")
 
-    # Step 2: Target Path
-    target_dir = prompt_with_default("6. Target directory to scaffold?", ".")
+    # Step 2: Dynamic Folder Recommendation based on User Input
+    print("\n--- STEP 2: TAILORED FOLDER RECOMMENDATION ---")
+    print(f"Based on your profile as a '{title_domain}' with focus on '{archetype['scope']}',")
+    print(f"here is our recommended folder architecture:\n")
     
-    # Step 3: Options
+    for d in archetype["dirs"]:
+        if "/" not in d and not d.startswith("."):
+            print(f"  📁 {d}/")
+    print("  📁 references/            (API schemas and tool SOPs)")
+    print("  📁 .agents/               (Skills hub and declarative subagents)")
+
+    print("\nRationale:")
+    if selected_mode == "hybrid":
+        print("  • Balances professional career execution with personal life ops, health, and finances.")
+        print("  • Raw sparks stage in Brainstorm/ before routing out, preventing premature project bloat.")
+    elif selected_mode == "numbered":
+        print("  • Enforces clean, deterministic alphabetical sorting across file managers and terminal tools.")
+        print("  • Distinct numerical boundaries separate personal life (01) from technical projects (03).")
+    elif selected_mode == "work":
+        print("  • Eliminates personal noise: dedicated workspaces for client engagements, builds, and ops.")
+        print("  • Isolates architectural decision records and firm knowledge from active sprints.")
+    elif selected_mode == "personal":
+        print("  • Clean separation for personal finances, workouts, reading notes, and daily routines.")
+        print("  • Includes a dedicated Inbox dropzone for mobile audio dumps and quick captures.")
+
+    confirm_foldering = prompt_with_default("\nProceed with this folder architecture? (y/n)", "y").lower()
+    if confirm_foldering not in ["y", "yes"]:
+        print("You can rerun this wizard or pass custom directories using scripts/scaffold_ai_os.py.")
+        sys.exit(0)
+
+    # Step 3: Target Path & Skills
+    print("\n--- STEP 3: ENVIRONMENT & CAPABILITIES ---")
+    target_dir = prompt_with_default("Target directory to scaffold", ".")
     skip_clone_input = prompt_with_default(
-        "7. Install all 16+ official Anthropic skills from GitHub? (y/n)",
+        "Install all 16+ official Anthropic skills from GitHub? (y/n)",
         "y"
     ).lower()
     skip_clone = skip_clone_input not in ["y", "yes"]
@@ -72,18 +117,21 @@ def main():
     profile_data = {
         "user_name": user_name,
         "title_and_domain": title_domain,
+        "primary_scope": archetype["scope"],
         "technical_stack": technical_stack,
         "north_star": north_star,
         "workload_constraints": workload,
+        "currency_standard": currency,
         "financial_mechanism": "Spreadsheet & Database Ingestion",
         "financial_tool": "Excel / Supabase PostgreSQL",
         "cloud_db_name": "Supabase PostgreSQL",
         "cloud_db_endpoint": "ap-south-1"
     }
 
-    print("\n[*] Starting AI OS Scaffolding...\n")
+    print("\n[*] Scaffolding AI OS...")
     scaffold(
         target_path=target_dir,
+        mode=selected_mode,
         profile_data=profile_data,
         skip_clone=skip_clone,
         overwrite=False
@@ -91,10 +139,10 @@ def main():
 
     print("\n[✔] Setup Complete!")
     print("Next steps:")
-    print("1. Open your workspace in Claude Code, Antigravity, or Cursor.")
-    print("2. Ask your agent: 'Run morning briefing' or 'Check my AI OS health'.")
-    print("3. Ideas start in Brainstorm/ before routing to Career, Learnings, or Personal.")
-    print("Enjoy your new autonomous external brain!\n")
+    print("1. Open your workspace in Antigravity, Claude Code, or Cursor.")
+    print("2. Ask your agent: 'Check my AI OS health' to run the Four-Cs baseline audit.")
+    print("3. Ideas start in Brainstorm/ before routing out to active folders.")
+    print("4. Your agent is hardcoded for radical honesty and zero sycophancy. Enjoy your external brain!\n")
 
 if __name__ == "__main__":
     main()

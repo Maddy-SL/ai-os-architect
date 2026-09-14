@@ -5,9 +5,9 @@
 [![Skills: Anthropic Catalog](https://img.shields.io/badge/Skills-Anthropic%20Official-purple.svg)](https://github.com/anthropics/skills.git)
 [![Status: Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success.svg)]()
 
-> **Transform any blank directory or messy workspace into an autonomous, compounding personal AI Operating System.**
+> **Transform any blank directory or messy workspace into an autonomous, compounding personal AI Operating System across Work, Personal, or Hybrid contexts.**
 
-`ai-os-architect` is a production-grade Agent Skill and CLI scaffolding engine designed for AI coding assistants (Claude Code, Antigravity, Cursor, Codex). It guides any user through an interactive discovery interview, maps their personal 7 Tier-1 data domains, configures the **Google Workspace MCP**, installs all 16+ official **Anthropic Skills**, and scaffolds an intuitive workspace based on **5 Core Life Hubs** and **Inviolable Honesty Non-Negotiables**.
+`ai-os-architect` is a production-grade Agent Skill and CLI scaffolding engine designed for modern AI coding assistants (Claude Code, Antigravity, Cursor, Codex). It interviews the user, gathers their unique operational scope, **dynamically recommends a tailored folder architecture** with clear rationale, configures data connectors (Google Workspace, Microsoft 365, GitHub, Notion), installs all 16+ official **Anthropic Skills**, and scaffolds an intuitive workspace governed by **Strict Anti-Sycophancy & Intellectual Honesty Non-Negotiables**.
 
 ---
 
@@ -16,91 +16,106 @@
 Most AI assistant setups suffer from three fatal failure modes:
 1. **Context Bloat & Drift**: Notes and logs accumulate in one massive prompt or file until the LLM degrades into hallucinations.
 2. **The "Passive Chatbot" Trap**: The AI only answers when spoken to, with zero real-world connection to calendar, email, or tasks.
-3. **Sycophancy & Cheerleading**: Without explicit behavioral constraints, AI assistants automatically agree with bad ideas and flatter the user.
+3. **Sycophancy & Flattery**: Without explicit behavioral constraints, AI assistants automatically agree with flawed ideas, flatter the user, and generate unrealistic fantasy schedules.
 
 `ai-os-architect` solves this by codifying:
-*   **The 5 Core Life Hubs**: Radical organizational simplicity without nested clutter.
+*   **Dynamic Folder Recommendation Engine**: Rather than imposing a rigid structure, it analyzes user scope (Work, Personal, Hybrid) and tools, then proposes the optimal foldering structure before writing.
 *   **The Brainstorm Auto-Routing Gate**: Ideas enter `Brainstorm/`, endure `/grill-me` drills, and route out to projects or get killed.
-*   **Google Workspace MCP Priority**: Connects 5 of the 7 Universal Data Domains in a single configuration.
+*   **Strict Anti-Sycophancy Protocol**: Hardcoded bans on flattery, automatic agreement, and contrarian swinging. Plain truth and trade-offs presented immediately.
+*   **Universal Data Connectors**: Google Workspace MCP (connects 5 universal data domains in one shot), Microsoft 365, GitHub, Supabase, and mobile dropzones.
 *   **Complete Anthropic Skills Arsenal**: Pre-loaded with `xlsx`, `docx`, `pptx`, `pdf`, `frontend-design`, `webapp-testing`, etc.
-*   **Inviolable Non-Negotiables**: Hardcoded honesty, answer-first triad, and memory discipline (<80 lines).
 *   **The Four-Cs Health Audit**: 100-point scoring system (Context, Connections, Capabilities, Cadence) with automated 15-day audits.
 
 ---
 
-## 📂 The 5 Core Life Hubs Architecture
+## 📂 The 3 Architectural Archetypes
 
+### 1. Dual-Engine Hybrid OS (Work + Life)
+Balances corporate projects with personal life ops, health, and finances.
+
+*Named Hubs Layout:*
 ```
 <AI_OS_ROOT>/
-├── AGENTS.md                   # CANONICAL Operating Playbook (Single source of truth, <200 lines)
-├── CLAUDE.md                   # Pointer to AGENTS.md
-├── GEMINI.md                   # Pointer to AGENTS.md
-├── MEMORY.md                   # Root Memory Index (<80 lines: Profile, State, High-Level Decisions)
-├── connections.md              # Master Connections Registry (7 Universal Data Domains + Cloud DBs + Cron)
-│
-├── Brainstorm/                 # Raw Ideation & Council Gate (Auto-routes to appropriate hub)
-│   ├── _archive/               # Shelved, parked, or rejected brainstorms
-│   ├── TEMPLATE_BRAINSTORM.md  # Template with /grill-me + Decision Gate
-│   └── README.md               # Brainstorm routing logic & instructions
-│
-├── Career/                     # Professional Builds, Consulting, Deliverables, Career Goals
-│   ├── Projects/               # Active work projects & codebases
-│   ├── Engagements/            # Client consulting / employer deliverables
-│   ├── Roadmap/                # Career milestone planning & resume
-│   └── README.md               # Master registry of active career initiatives
-│
-├── Learnings/                  # Research, Study Logs, Technical Notes, Book Summaries
-│   ├── [Subject_Folders]/      # Topic-specific folders (notes, cheat sheets, references)
-│   └── README.md               # Master learning syllabus & index
-│
-├── Personal/                   # Daily Life, Finances, Health, Routines
-│   ├── Finance/                # Personal investments, budgets, taxes
-│   ├── Health/                 # Fitness logs, medical records, nutrition
-│   ├── Life/                   # Long-term personal goals, habits, ops
-│   ├── Inbox/                  # Dropzone triage staging (WhatsApp dumps, voice memos, raw drops)
-│   └── README.md
-│
-├── Other Activities/           # Hobbies, Sports, Creative Pursuits, Side Explorations
-│   ├── Sports/                 # Cricket, fitness activities, matches
-│   ├── Hobbies/                # Food/culinary exploration, casual writing, travel
-│   └── README.md
-│
-├── Outputs/                    # Final Deliverables (Reports, Decks, Models) & Audits
-│   ├── Audits/                 # Automated 15-day workspace health audit reports
-│   └── README.md
-│
-├── references/                 # Knowledge Hub: Reusable API Specs & SOPs
-│   ├── google-workspace-api.md # Endpoints, auth, and common queries for Google MCP
-│   └── README.md
-│
-└── .agents/                    # Agent Runtime & Customizations
-    ├── AGENTS.md               # Pointer to root AGENTS.md
-    ├── agents/                 # Declarative Specialist Subagents (*.md)
-    └── skills/                 # Agent Skills Hub (ALL Anthropic skills + Custom skills)
+├── Brainstorm/                 # Raw Ideation & Council Gate (Auto-routes out)
+├── Career/                     # Professional Builds, Consulting, Deliverables, Roadmap
+├── Learnings/                  # Research, Study Logs, Technical Syllabi, Books
+├── Other Activities/           # Hobbies, Sports (Cricket, Gym), Culinary, Travel
+├── Personal/                   # Daily Life, Finances (Finance/), Health, Inbox
+├── Outputs/                    # Final Deliverables & 15-day Audits (Audits/)
+├── references/                 # API Specs, Tool SOPs, System Cheat Sheets
+└── .agents/                    # Runtime: Skills Hub (.agents/skills/) & Subagents
+```
+
+*Numbered Workstations Layout (`--mode numbered`):*
+```
+<AI_OS_ROOT>/
+├── 00_Outputs/                 # Deliverables & Audits
+├── 01_Personal/                # Life Ops, Finance, Health, Dropzone Inbox
+├── 02_Learning/                # Research & Study Curricula
+├── 03_Projects/                # Professional Builds & Client Engagements
+├── 04_Brainstorms/             # Raw Ideation & Routing Gate
+├── references/                 # Tool & API Specifications
+└── .agents/                    # Runtime Agents & Skills
+```
+
+### 2. Work & Professional OS (`--mode work`)
+For corporate executives, consultants, engineers, or founders focused purely on professional output.
+```
+<AI_OS_ROOT>/
+├── Brainstorm/                 # Feature specs, initiative proposals, pitch ideas
+├── Projects/                   # Active builds, code repositories, internal tools
+├── Engagements/                # Client discovery, BRDs, RCMs, deliverables
+├── Operations/                 # Team workflows, meeting agendas, OKRs
+├── Knowledge/                  # Architecture records (ADRs), regulatory playbooks
+├── Outputs/                    # Client decks, audit reports, executive memos
+├── references/                 # Internal API specs, database schemas
+└── .agents/                    # Specialist subagents and skills
+```
+
+### 3. Personal Life OS (`--mode personal`)
+For personal self-mastery, finances, workouts, reading, and habits without corporate noise.
+```
+<AI_OS_ROOT>/
+├── Brainstorm/                 # Personal ideas, creative writing sparks, travel
+├── Life/                       # Core values, routines, household ops, reviews
+├── Finance/                    # Personal investments, budgets, taxes
+├── Health/                     # Workouts, nutrition, sleep logs, biomarkers
+├── Learnings/                  # Course syllabi, book notes, language study
+├── Hobbies/                    # Sports, creative writing, music, travel
+├── Inbox/                      # Dropzone for WhatsApp voice notes and mobile dumps
+├── Outputs/                    # Personal essays, creative deliverables, audits
+├── references/                 # Personal SOPs and tool cheat sheets
+└── .agents/                    # Helper skills and agents
 ```
 
 ---
 
-## 🚦 Automatic Routing Logic for `Brainstorm/`
+## 🚦 Dynamic Recommendation & Brainstorm Routing Logic
 
-No project folder can be created without passing through the `Brainstorm/` decision gate:
+During onboarding, the agent conducts a discovery interview and recommends the exact folder structure:
 
 ```
-[Raw Spark / Incoming Idea]
-            ↓
-    [Brainstorm Folder]
-  (YYYY-MM-DD_Concept.md)
-            ↓
+[Gather User Scope & Role] ──> [Suggest Tailored Foldering with Rationale] ──> [User Confirms / Customizes]
+                                                                                          │
+                                                                                          ▼
+                                                                              [Scaffold System & Rules]
+```
+
+Every project thereafter follows the **Brainstorm State Machine**:
+```
+[Incoming Spark / Idea]
+          ↓
+[Brainstorm/YYYY-MM-DD_Concept.md]
+          ↓
 [Interactive /grill-me Drill]
-(Uncover assumptions, bottlenecks, feasibility, and real-world friction)
-            ↓
-    [The Decision Gate]
-┌───────────┬─────────────┬──────────────┬──────────────────┬─────────────┐
-│ If Career │ If Learning │ If Personal  │ If Hobby/Side    │ If Shelved  │
-│ / Business│ / Knowledge │ / Life Ops   │ / Creative       │ / Fatal Flaw│
-└─────┬─────┴──────┬──────┴──────┬───────┴────────┬─────────┴──────┬──────┘
-      ↓            ↓             ↓                ↓                ↓
-  `Career/`   `Learnings/`  `Personal/` `Other Activities/` `Brainstorm/_archive/`
+(Probe assumptions, weekly hours, technical feasibility, and risks)
+          ↓
+[Routing Decision Gate]
+├── IF Professional Build / Client Work: → Route to Career/Projects/ or Engagements/
+├── IF Study Topic / Skill Acquisition:  → Route to Learnings/[Topic_Name]/
+├── IF Life Habit / Financial System:    → Route to Personal/ or Finance/
+├── IF Hobby / Sports / Creative:       → Route to Other Activities/ or Hobbies/
+└── IF Flawed / High Opportunity Cost:   → Archive to Brainstorm/_archive/
 ```
 
 ---
@@ -120,40 +135,45 @@ git clone https://github.com/Maddy-SL/ai-os-architect.git .claude/skills/ai-os-a
 ```
 
 Once installed, simply prompt your agent:
-> *"Build an AI OS from scratch for me"*  
+> *"Build an AI OS for me"*  
 > or  
 > *"Upgrade my existing workspace into an AI OS"*
 
-The agent will automatically conduct the pre-flight scan, run the discovery interview, scaffold the 5 hubs, install all Anthropic skills, and configure Google Workspace MCP.
+The agent will audit your directory, conduct the discovery interview, dynamically suggest your tailored folder structure, install all Anthropic skills, configure connectors, and scaffold the system.
 
 ---
 
 ### Method 2: Run the Interactive Terminal Wizard (No Agent Needed)
 
-You can run the interactive setup wizard directly in your terminal. It asks you 5 simple questions, maps your directory, installs all Anthropic skills, and sets up your entire system in under 60 seconds:
+Run the interactive setup wizard directly in your terminal:
 
 ```bash
-# Clone the repository
-git clone https://github.com/Maddy-SL/ai-os-architect.git
-
 # Launch the interactive wizard
 python ai-os-architect/scripts/interactive_onboard.py
 ```
+
+It interviews you, shows the recommended foldering with rationale, and sets up your entire workspace in under 60 seconds.
 
 ---
 
 ### Method 3: Headless CLI Scaffolding
 
-For automated setups or CI pipelines, run the headless CLI script:
+For automated setups or scripted environments:
 
 ```bash
-# Run on current directory (with automatic Anthropic skills clone)
-python ai-os-architect/scripts/scaffold_ai_os.py --target "."
+# Dual-Engine Hybrid (5 Core Life Hubs - default)
+python ai-os-architect/scripts/scaffold_ai_os.py --target "." --mode hybrid
 
-# Run with a custom user profile JSON
-python ai-os-architect/scripts/scaffold_ai_os.py --target "/path/to/workspace" --profile-json profile.json
+# Numbered Workstations (00_Outputs, 01_Personal, 02_Learning, 03_Projects, 04_Brainstorms)
+python ai-os-architect/scripts/scaffold_ai_os.py --target "." --mode numbered
 
-# Offline / fast mode (skip git cloning)
+# Work & Professional Only (Enterprise)
+python ai-os-architect/scripts/scaffold_ai_os.py --target "." --mode work
+
+# Personal Life Only
+python ai-os-architect/scripts/scaffold_ai_os.py --target "." --mode personal
+
+# Fast offline mode (skip git cloning)
 python ai-os-architect/scripts/scaffold_ai_os.py --target "." --skip-clone
 ```
 
@@ -163,28 +183,33 @@ python ai-os-architect/scripts/scaffold_ai_os.py --target "." --skip-clone
 
 Every AI OS scaffolded by this engine embeds these non-negotiables into `AGENTS.md`:
 
-1. **Radical Intellectual Honesty**:
-   - Strict ban on flattery, sycophancy, and contrarian swinging.
+1. **Radical Intellectual Honesty & Anti-Sycophancy**:
+   - Strict ban on flattery, automatic agreement, and contrarian swinging.
    - Tells the user the hard truth, trade-offs, and fatal flaws plainly.
 2. **Answer First with Balanced Triad**:
-   - Delivers the solution, execution nuances, and fatal risks in the very first turn.
+   - Delivers the solution, execution nuances, and fatal risks together in the very first turn.
    - Clarifies only when two interpretations would produce materially different work.
 3. **Grounding in Real Constraints**:
-   - Factors in actual weekly corporate workload (e.g. 50-60 hr job) and deep-work bandwidth.
+   - Factors in actual weekly corporate workload (e.g. 45-55 hr job) and deep-work bandwidth.
 4. **Memory Discipline (<80 Lines)**:
-   - Root `MEMORY.md` is strictly an index. Detailed project history lives in project folders; old milestones archive to `00_Resources/`.
+   - Root `MEMORY.md` is strictly an index. Detailed history lives in project folders; old milestones archive to `00_Resources/`.
 5. **Backtracking & Self-Repair**:
-   - When an agent encounters a broken link or routing miss, it must diagnose why and repair the documentation immediately.
+   - When an agent encounters a broken link or routing miss, it must diagnose why and repair documentation immediately.
+6. **Verification Rigor**:
+   - Calculations, regulatory citations, and code logic are verified twice before finalizing.
+7. **Executive Density & Clean Output**:
+   - High information density; clean email copy with zero markdown asterisks (`**`). Concludes with a Quick Summary.
 
 ---
 
 ## 📦 What's Included
 
-*   `SKILL.md`: The progressive-disclosure skill prompt (<500 lines) compatible with Claude Code and Antigravity.
+*   `SKILL.md`: The progressive-disclosure skill prompt compatible with Claude Code, Antigravity, and Cursor.
 *   `references/`: Deep architectural guides for folder taxonomy, Anthropic skills catalog, MCP connectors, discovery interview script, and the Four-Cs scoring rubric.
 *   `templates/`: Production-ready templates for `AGENTS.md`, `MEMORY.md`, `connections.md`, `TEMPLATE_BRAINSTORM.md`, and pointer files.
-*   `scripts/scaffold_ai_os.py`: Cross-platform, zero-dependency Python CLI scaffolding tool.
-*   `evals/evals.json`: Automated test cases for validating skill performance.
+*   `scripts/scaffold_ai_os.py`: Multi-mode cross-platform scaffolding engine.
+*   `scripts/interactive_onboard.py`: Terminal interview wizard with tailored foldering recommendations.
+*   `evals/evals.json`: Comprehensive test scenarios covering hybrid, work, personal, and existing workspace setups.
 
 ---
 

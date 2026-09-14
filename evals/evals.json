@@ -3,27 +3,52 @@
   "evals": [
     {
       "id": 1,
-      "name": "fresh_ai_os_onboarding",
+      "name": "fresh_ai_os_onboarding_hybrid",
       "prompt": "I want to build a personal AI OS from scratch to manage my consulting work, study goals, and daily life. How should I set this up?",
-      "expected_output": "Agent initiates discovery interview, audits target directory, presents the 5 Core Life Hubs (Brainstorm with auto-routing, Career, Learnings, Other Activities, Personal), recommends Google Workspace MCP, installs all Anthropic skills, and enforces strict honesty non-negotiables.",
+      "expected_output": "Agent initiates discovery interview, audits target directory, gathers user information, dynamically suggests a tailored foldering structure with explicit rationale based on the user's focus, recommends Google Workspace MCP, confirms Anthropic skills, and enforces strict anti-sycophancy non-negotiables.",
       "assertions": [
-        "Mentions the 5 Core Life Hubs: Brainstorm, Career, Learnings, Other Activities, and Personal",
+        "Conducts discovery interview inquiring about scope, domain, tools, and constraints",
+        "Dynamically suggests tailored folder architecture based on user input before writing",
         "Explains Brainstorm automatic routing logic",
-        "Recommends Google Workspace MCP for connecting 5 universal data domains",
+        "Recommends Google Workspace MCP or relevant connectors",
         "Confirms installation of all Anthropic skills from github.com/anthropics/skills.git",
-        "Enforces radical intellectual honesty and no sycophancy"
+        "Enforces radical intellectual honesty and anti-sycophancy rules"
       ]
     },
     {
       "id": 2,
+      "name": "work_focused_enterprise_onboarding",
+      "prompt": "I need an AI OS purely for my software engineering and client consulting practice. I don't want any personal life or hobby stuff in here. What folder structure and rules do you recommend?",
+      "expected_output": "Agent identifies Work-only scope, recommends the Work/Professional OS archetype (Brainstorm, Projects, Engagements, Operations, Knowledge, Outputs), presents rationale, and enforces anti-sycophancy and real constraint grounding.",
+      "assertions": [
+        "Recognizes pure professional/work scope",
+        "Suggests professional folder structure (Projects, Engagements/Clients, Operations, Knowledge)",
+        "Explains why this structure isolates workpapers from personal noise",
+        "Enforces radical intellectual honesty and answer-first triad"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "personal_life_os_onboarding",
+      "prompt": "I want an AI OS strictly for personal life: tracking my personal finances, gym workouts, reading notes, and dropzone inbox for audio memos. How should we organize it?",
+      "expected_output": "Agent identifies Personal Life scope, suggests Personal Life OS foldering (Life, Finance, Health, Learnings, Hobbies, Inbox, Outputs), details dropzone triage, and embeds memory discipline and anti-sycophancy rules.",
+      "assertions": [
+        "Recognizes personal life management scope",
+        "Suggests personal folders (Finance, Health, Life, Learnings, Hobbies, Inbox)",
+        "Details Inbox dropzone triage for voice notes and captures",
+        "Enforces memory index limit (<80 lines) and strict intellectual honesty"
+      ]
+    },
+    {
+      "id": 4,
       "name": "existing_workspace_adaptation",
       "prompt": "I already have some project folders and notes in my directory. Can you turn this into a compounding AI OS without breaking my stuff?",
-      "expected_output": "Agent scans existing folders first, maps them non-destructively to the 5 Core Life Hubs, introduces Brainstorm routing, AGENTS.md single source of truth, and baseline Four-Cs health score.",
+      "expected_output": "Agent scans existing folders first, maps them non-destructively to an appropriate archetype, introduces Brainstorm routing, AGENTS.md single source of truth, and baseline Four-Cs health score.",
       "assertions": [
         "Performs pre-flight scan of existing folders",
         "Preserves existing files without destructive overwrites",
-        "Maps existing folders to the 5 core hubs",
-        "Creates canonical AGENTS.md with pointer files"
+        "Maps existing folders cleanly to recommended architecture",
+        "Creates canonical AGENTS.md with pointer files and anti-sycophancy rules"
       ]
     }
   ]

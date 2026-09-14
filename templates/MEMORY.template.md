@@ -12,35 +12,31 @@ This file stores your profile, active operating state, workstation links, and du
 | Area | Current Focus | Source of Truth |
 | :--- | :--- | :--- |
 | **North Star** | {{NORTH_STAR_GOAL}} | This file - User Profile |
-| **Active Builds** | {{ACTIVE_PROJECTS_SUMMARY}} | `Career/README.md` |
-| **Learnings** | {{CURRENT_STUDY_FOCUS}} | `Learnings/README.md` |
+{{OPERATING_STATE_ROWS}}
 | **Audits** | 15-day cadence health scoring | `Outputs/Audits/` |
 
 ---
 
 ## 👤 User Profile
 *   **Name / Role**: {{USER_NAME}} | {{USER_TITLE_AND_DOMAIN}}
-*   **Technical Stack & Tools**: {{TECHNICAL_STACK}}
+*   **Primary Scope**: {{PRIMARY_SCOPE}}
+*   **Technical Stack & Daily Tools**: {{TECHNICAL_STACK}}
 *   **12–18 Month North Star**: {{NORTH_STAR_GOAL}}
 *   **Weekly Workload & Real Constraints**: {{WORKLOAD_CONSTRAINTS}}
 *   **Core Operating Preferences**:
-    *   Values strict intellectual honesty and directness (no sycophancy, no cheerleading).
-    *   Prefers answer-first responses presenting strengths, nuances, and fatal risks together.
+    *   Values strict intellectual honesty and directness (no sycophancy, no cheerleading, no contrarian swinging).
+    *   Prefers answer-first responses presenting strengths, execution nuances, and fatal risks together in the first turn.
+    *   Requires grounding in real constraints (actual workload and cognitive friction).
     *   Prefers structured tables, bullet points, and quick summaries.
 
 ---
 
-## 📂 The 5 Core Life Hubs
-*   **[Brainstorm](file:///{{AI_OS_ROOT}}/Brainstorm)**: Active ideation & `/grill-me` drills. Master guide in `Brainstorm/README.md`.
-*   **[Career](file:///{{AI_OS_ROOT}}/Career)**: Professional projects, consulting, and roadmap. Registry in `Career/README.md`.
-*   **[Learnings](file:///{{AI_OS_ROOT}}/Learnings)**: Research notes and study syllabi. Master index in `Learnings/README.md`.
-*   **[Other Activities](file:///{{AI_OS_ROOT}}/Other%20Activities)**: Sports, fitness, culinary exploration, and hobbies.
-*   **[Personal](file:///{{AI_OS_ROOT}}/Personal)**: Daily life ops, finances (`Finance/`), and inbox triage (`Inbox/`).
-*   **[Outputs](file:///{{AI_OS_ROOT}}/Outputs)**: Final deliverable decks, reports, and [Audits](file:///{{AI_OS_ROOT}}/Outputs/Audits).
+## 📂 Active Workstations
+{{WORKSTATIONS_LIST}}
 
 ---
 
 ## 🧠 Learned Context & Decisions
-*(Keep high-level milestones here. Archive detailed history to `00_Resources/MEMORY_ARCHIVE_*.md`.)*
+*(Keep high-level milestones here. Archive detailed history to `00_Resources/` or workstation logs.)*
 
-- **{{TODAY_DATE}}**: **Initialized AI OS Workspace**: Established 5 Core Life Hubs (`Brainstorm`, `Career`, `Learnings`, `Other Activities`, `Personal`), integrated Google Workspace MCP, and installed official Anthropic skills.
+- **{{TODAY_DATE}}**: **Initialized AI OS Workspace**: Established {{ARCHETYPE_NAME}} architecture, configured connections, installed Anthropic skills catalog, and codified inviolable anti-sycophancy operating rules.
