@@ -1,9 +1,6 @@
-# AI OS — Pointer File
+# AI OS — Master Pointer File
 
-**The canonical playbook is [AGENTS.md](file:///{{AI_OS_ROOT}}/AGENTS.md) at the workspace root.**
+**The canonical playbook and operating constitution is [AGENTS.md](file:///{{AI_OS_ROOT}}/AGENTS.md) at the workspace root.**  
+**The canonical living memory and active sprint radar is [MEMORY.md](file:///{{AI_OS_ROOT}}/MEMORY.md) at the workspace root.**
 
-Read it now, before your first action in this workspace. It carries every rule: memory protocol, the 5 Core Life Hubs, voice and output constraints, strict honesty non-negotiables, file link protocol, and the commands dictionary.
-
-Then read [MEMORY.md](file:///{{AI_OS_ROOT}}/MEMORY.md) for active context and goals.
-
-> Do not add rules to this file. It exists only so that Claude, Gemini, and other agent runtimes converge on one playbook. Rules live in `AGENTS.md` and nowhere else.
+> All rules, anti-sycophancy directives, cognitive sparring protocols, and sprint goals are defined in those files. Do not add rules to this file.

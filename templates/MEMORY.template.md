@@ -1,46 +1,50 @@
-# AI OS: Master Memory Index (`MEMORY.md`)
+# AI OS: Master Living Radar (`MEMORY.md`)
 
-This file stores your profile, active operating state, workstation links, and durable decisions. It serves as my persistent brain across sessions. Keep under 80 lines.
+> **Single living state and active radar for this workspace.**
+> Anchored to the **Jeff Su Layered Memory Protocol** — strictly capped under 200 lines.
+> Rules live in canonical [AGENTS.md](file:///{{AI_OS_ROOT}}/AGENTS.md); system connections live in [_System/connections.md](file:///{{AI_OS_ROOT}}/_System/connections.md).
 
 ---
 
-## Current Operating State
+## 1. System & Operational State
+- **Last System Calibration**: {{TODAY_DATE}}
+- **Canonical Constitution**: [AGENTS.md](file:///{{AI_OS_ROOT}}/AGENTS.md)
+- **Active Architecture**: {{ARCHETYPE_NAME}}
+- **Active Sprint Focus**: {{NORTH_STAR_GOAL}}
 
-**Last operational review:** {{TODAY_DATE}}
-**Agent rules:** root [AGENTS.md](file:///{{AI_OS_ROOT}}/AGENTS.md) is canonical. Pointers contain no standalone rules.
+---
 
-| Area | Current Focus | Source of Truth |
-| :--- | :--- | :--- |
-| **North Star** | {{NORTH_STAR_GOAL}} | This file - User Profile |
+## 2. Active Radar & Priorities
+| Priority Track | Focus / Milestone | Status | Primary Destination |
+| :--- | :--- | :--- | :--- |
+| **Top Priority 1** | Foundation setup & system onboarding | `ACTIVE` | `[Workstations](file:///{{AI_OS_ROOT}}/)` |
+| **Top Priority 2** | Establish first active project & packet | `PENDING` | `[Projects](file:///{{AI_OS_ROOT}}/)` |
+| **Top Priority 3** | Connect primary MCP data pipelines | `ACTIVE` | `[_System/connections.md](file:///{{AI_OS_ROOT}}/_System/connections.md)` |
 {{OPERATING_STATE_ROWS}}
-| **Audits** | 15-day cadence health scoring | `Outputs/Audits/` |
 
 ---
 
-## 👤 User Profile
-*   **Name / Role**: {{USER_NAME}} | {{USER_TITLE_AND_DOMAIN}}
-*   **Primary Scope**: {{PRIMARY_SCOPE}}
-*   **Technical Stack & Daily Tools**: {{TECHNICAL_STACK}}
-*   **12–18 Month North Star**: {{NORTH_STAR_GOAL}}
-*   **Weekly Workload & Real Constraints**: {{WORKLOAD_CONSTRAINTS}}
-*   **Core Operating Preferences**:
-    *   Values strict intellectual honesty, directness, and anti-sycophancy (no cheerleading, no fence-sitting, no contrarian pendulum).
-    *   Prefers answer-first responses presenting strengths, execution nuances, and fatal risks together in the first turn.
-    *   Requires definite recommendations (Pick a Horse) with explicit boundary conditions instead of unranked pros/cons.
-    *   Requires the "So What?" drilldown connecting data, specs, and compliance to cash flow, balance sheet, or audit impact.
-    *   Mandatory pre-mortem analysis identifying top failure modes and Day-1 mitigations.
-    *   Zero throat-clearing: ban conversational filler, prompt recaps, and AI buzzwords (*"seamless"*, *"robust"*, *"delve"*); open with substance.
-    *   Requires grounding in real constraints & Pareto triage (Day-1 80/20 wins alongside enterprise target states).
-    *   Prefers structured tables, bullet points, and quick summaries.
+## 3. User Profile & Operating Context
+- **Name / Role**: **{{USER_NAME}}** | {{USER_TITLE_AND_DOMAIN}}
+- **Profile Context**: Detailed personal identity in [_System/Context/personal_profile.md](file:///{{AI_OS_ROOT}}/_System/Context/personal_profile.md).
+- **Core Principles Filter**: 12 favorite problems filter in [_System/Context/twelve_problems.md](file:///{{AI_OS_ROOT}}/_System/Context/twelve_problems.md).
+- **Primary North Star (12–18 Months)**: {{NORTH_STAR_GOAL}}
+- **Weekly Schedule & Real Constraints**: {{WORKLOAD_CONSTRAINTS}}
+- **Technical & Software Stack**: {{TECHNICAL_STACK}}
+- **Currency Standard**: {{CURRENCY_STANDARD}}
+- **Core Operating Mandates**:
+  - Radical anti-sycophancy: Zero unearned praise, challenge flawed assumptions immediately.
+  - Strategic Simplicity Filter: Never simplify by omitting; simplify by sequencing.
+  - Single Next Physical Action Rule: Mandatory `> [!NEXT-ACTION]` callout (<= 15 min time-box) on every substantive turn.
+  - Visual Craft: Anti-slop, lexicon bans, hairline borders, 1 primary accent, 16:9 widescreen slides under 50 words.
+  - Pristine Root Zero: Never generate untracked scratch files at root.
 
 ---
 
-## 📂 Active Workstations
+## 4. Active Workstations
 {{WORKSTATIONS_LIST}}
 
 ---
 
-## 🧠 Learned Context & Decisions
-*(Keep high-level milestones here. Archive detailed history to `00_Resources/` or workstation logs.)*
-
-- **{{TODAY_DATE}}**: **Initialized AI OS Workspace**: Established {{ARCHETYPE_NAME}} architecture, configured connections, installed Anthropic skills catalog, and codified inviolable anti-sycophancy operating rules.
+## 5. Durable Decisions Log
+- **{{TODAY_DATE}}**: **Initialized AI OS Workspace**: Established {{ARCHETYPE_NAME}} architecture, configured `_System/` infrastructure, installed Anthropic skills catalog, and codified inviolable anti-sycophancy operating rules into [AGENTS.md](file:///{{AI_OS_ROOT}}/AGENTS.md).

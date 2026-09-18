@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-Interactive AI OS Onboarding Wizard
+Interactive AI OS Onboarding Wizard (v2.0.0)
 Guides a user through an adaptive interview, captures their profile and scope,
 dynamically suggests a tailored folder architecture with clear rationale,
-installs all Anthropic skills, and scaffolds their AI OS with strict anti-sycophancy and elite reasoning rules.
+installs all Anthropic skills, and scaffolds their AI OS with strict cognitive sparring,
+strategic simplicity, Pristine Root Zero, and visual craft rules.
 """
 
 import sys
@@ -26,7 +27,8 @@ def print_banner():
  / ___ / ___ / /_/ /___/ / / ___ |/ /  / /_/ / / / / /_/  __/ /_/ /_  
 /_/  |/_/  |_\____//____/ /_/  |_/_/   \__/_/ /_/_/\__/\___/\__/\__/  
                                                                       
-           Autonomous Personal AI Operating System Scaffolder
+           Autonomous Personal AI Operating System (v2.0.0)
+      Pristine Root Zero | Cognitive Sparring | Layered Memory
 ===================================================================
 """)
 
@@ -41,10 +43,10 @@ def main():
     # Step 1: User Scope & Profile
     print("--- STEP 1: SCOPE & PROFILE ---")
     print("What is the primary focus of this AI OS?")
-    print("  [1] Dual-Engine Hybrid (5 Core Life Hubs: Brainstorm, Career, Learnings, Other, Personal)")
-    print("  [2] Numbered Workstations (00_Outputs, 01_Personal, 02_Learning, 03_Projects, 04_Brainstorms)")
-    print("  [3] Work & Professional Only (Enterprise, Projects, Engagements, Operations, Knowledge)")
-    print("  [4] Personal Life Only (Life, Finance, Health, Learnings, Hobbies, Inbox)")
+    print("  [1] Dual-Engine Hybrid OS (00_Inbox, 00_Outputs, 01_Personal, 02_Learning, 03_Projects, _System)")
+    print("  [2] Numbered Workstations (Clean Level-1 Segmentation across all facets)")
+    print("  [3] Work & Professional Only (00_Inbox, Projects, Engagements, Operations, Knowledge, Outputs)")
+    print("  [4] Personal Life Only (00_Inbox, Life, Finance, Health, Learnings, Hobbies, Outputs)")
     scope_choice = prompt_with_default("Select mode (1/2/3/4)", "1")
 
     mode_map = {
@@ -84,25 +86,26 @@ def main():
         if "/" not in d and not d.startswith("."):
             print(f"  📁 {d}/")
     print("  📁 references/            (API schemas and tool SOPs)")
-    print("  📁 .agents/               (Skills hub and declarative subagents)")
+    print("  📁 _System/               (Connections registry, compounding templates, user context)")
+    print("  📁 .agents/               (Skills hub, specialist agents, visual craft rules)")
 
-    print("\nRationale:")
-    if selected_mode == "hybrid":
-        print("  • Balances professional career execution with personal life ops, health, and finances.")
-        print("  • Raw sparks stage in Brainstorm/ before routing out, preventing premature project bloat.")
-    elif selected_mode == "numbered":
-        print("  • Enforces clean, deterministic alphabetical sorting across file managers and terminal tools.")
-        print("  • Distinct numerical boundaries separate personal life (01) from technical projects (03).")
+    print("\nArchitecture Rationale:")
+    if selected_mode in ["hybrid", "numbered"]:
+        print("  • Pristine Root Zero: Root contains only AGENTS.md, MEMORY.md, pointer files, and .gitignore.")
+        print("  • 00_Inbox: Zero-friction dropzone for voice notes and task captures; auto-routes out.")
+        print("  • Dedicated _System Hub: Isolates system connections, 7 compounding templates, and user context.")
+        print("  • Jeff Su Layered Memory: Root MEMORY.md is a living radar strictly capped under 200 lines.")
     elif selected_mode == "work":
-        print("  • Eliminates personal noise: dedicated workspaces for client engagements, builds, and ops.")
-        print("  • Isolates architectural decision records and firm knowledge from active sprints.")
+        print("  • Enterprise Focus: Dedicated workstations for client engagements, builds, operations, and knowledge.")
+        print("  • 00_Inbox: Intake gate for client briefs and technical RFCs before project creation.")
+        print("  • Pristine Root Zero: Enforces clean directory discipline for enterprise repositories.")
     elif selected_mode == "personal":
-        print("  • Clean separation for personal finances, workouts, reading notes, and daily routines.")
-        print("  • Includes a dedicated Inbox dropzone for mobile audio dumps and quick captures.")
+        print("  • Self-Mastery: Dedicated hubs for personal finances, workouts, reading notes, and daily life ops.")
+        print("  • 00_Inbox: Mobile capture dropzone for WhatsApp voice notes, receipts, and sparks.")
 
     confirm_foldering = prompt_with_default("\nProceed with this folder architecture? (y/n)", "y").lower()
     if confirm_foldering not in ["y", "yes"]:
-        print("You can rerun this wizard or pass custom directories using scripts/scaffold_ai_os.py.")
+        print("You can rerun this wizard or pass custom parameters using scripts/scaffold_ai_os.py.")
         sys.exit(0)
 
     # Step 3: Target Path & Skills
@@ -141,8 +144,9 @@ def main():
     print("Next steps:")
     print("1. Open your workspace in Antigravity, Claude Code, or Cursor.")
     print("2. Ask your agent: 'Check my AI OS health' to run the Four-Cs baseline audit.")
-    print("3. Ideas start in Brainstorm/ before routing out to active folders.")
-    print("4. Your agent is hardcoded for radical honesty, zero sycophancy, and definite recommendations. Enjoy your external brain!\n")
+    print("3. Ideas start in 00_Inbox/ before routing out to active project folders.")
+    print("4. Your agent is configured as an Executive Chief of Staff and Cognitive Sparring Partner.")
+    print("   Expect radical anti-sycophancy, strategic simplicity, and single physical next actions.\n")
 
 if __name__ == "__main__":
     main()

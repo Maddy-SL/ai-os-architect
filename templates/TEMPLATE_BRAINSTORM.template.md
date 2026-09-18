@@ -1,13 +1,17 @@
 # Concept: {{CONCEPT_NAME}}
+
 - **Date Initiated**: {{DATE}}
-- **Status**: Raw / Under Review / Proceed / Park / Kill
-- **Target Destination**: Career / Learnings / Personal / Other Activities / Archive
+- **Status**: Raw / In Review / Proceed / Park / Kill
+- **Target Destination**: Projects / Learning / Personal / Archive
 
 ---
 
 ## 1. The Spark / Idea
 *What is the core premise, problem being solved, or new capability being explored?*
-- 
+
+*   **Problem Statement**: 
+*   **Proposed Solution**: 
+*   **Target User / Beneficiary**: 
 
 ---
 
@@ -16,9 +20,9 @@
 
 1. **Why now? What triggers this priority?**
    - 
-2. **What is the simplest version that delivers 80% of the value?**
+2. **What is the simplest version that delivers 80% of the value (Minimum Viable Intermediate Packet)?**
    - 
-3. **What is the fatal flaw or highest risk point?**
+3. **What is the fatal flaw or highest risk point (Pre-Mortem)?**
    - 
 
 ---
@@ -32,7 +36,7 @@
     - *What is the technical bottleneck, maintenance cost, or hidden complexity?*
     - 
 *   **Lens 3: The Opportunity Cost Analyst**
-    - *Given real-world weekly hours, does this directly serve the 12–18 month North Star?*
+    - *Given real-world weekly hours ({{WORKLOAD_CONSTRAINTS}}), does this directly serve the North Star ({{NORTH_STAR_GOAL}})?*
     - 
 
 ---
@@ -40,9 +44,8 @@
 ## 4. Automatic Routing Decision Gate
 
 **Final Verdict**:
-- [ ] **PROCEED**: Move to `Career/Projects/{{CONCEPT_NAME}}` or `Career/Engagements/`
-- [ ] **STUDY**: Move to `Learnings/{{CONCEPT_NAME}}`
-- [ ] **LIFESTYLE / HABIT**: Move to `Personal/`
-- [ ] **HOBBY / RECREATION**: Move to `Other Activities/`
-- [ ] **PARK**: Retain in `Brainstorm/` for quarterly re-evaluation
-- [ ] **KILL**: Archive to `Brainstorm/_archive/` with lesson learned
+- [ ] **PROCEED**: Move to active Projects and register in Project Registry.
+- [ ] **STUDY**: Move to Learning workstation.
+- [ ] **LIFESTYLE / HABIT**: Move to Personal workstation.
+- [ ] **PARK**: Retain in `00_Inbox/` or archive for quarterly re-evaluation.
+- [ ] **KILL**: Archive to `00_Inbox/_archive/` with failure analysis documented.
